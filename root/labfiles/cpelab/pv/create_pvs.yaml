@@ -1,0 +1,301 @@
+{
+  "kind": "PersistentVolume",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "cpe-lab-icp-cfgstore-pv",
+    "labels": {}
+  },
+  "spec": {
+    "storageClassName": "cpe-lab-icp-cfgstore",
+    "capacity": {
+      "storage": "1Gi"
+    },
+    "accessModes": [
+      "ReadWriteMany"
+    ],
+    "persistentVolumeReclaimPolicy": "Retain",
+    "nfs": {
+      "path": "/nfs/cpe-lab/configDropins_overrides",
+      "server": "master.cp4a.com"
+    }
+  }
+}
+
+{
+  "kind": "PersistentVolumeClaim",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "cpe-lab-icp-cfgstore-pvc",
+    "namespace": "cpe-lab"
+  },
+  "spec": {
+    "storageClassName": "cpe-lab-icp-cfgstore",
+    "resources": {
+      "requests": {
+        "storage": "1Gi"
+      }
+    },
+    "accessModes": [
+      "ReadWriteMany"
+    ]
+  }
+}
+
+{
+  "kind": "PersistentVolume",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "cpe-lab-icp-logstore-pv",
+    "labels": {}
+  },
+  "spec": {
+    "storageClassName": "cpe-lab-icp-logstore",
+    "capacity": {
+      "storage": "5Gi"
+    },
+    "accessModes": [
+      "ReadWriteMany"
+    ],
+    "persistentVolumeReclaimPolicy": "Retain",
+    "nfs": {
+      "path": "/nfs/cpe-lab/log",
+      "server": "master.cp4a.com"
+    }
+  }
+}
+
+{
+  "kind": "PersistentVolumeClaim",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "cpe-lab-icp-logstore-pvc",
+    "namespace": "cpe-lab"
+  },
+  "spec": {
+    "storageClassName": "cpe-lab-icp-logstore",
+    "resources": {
+      "requests": {
+        "storage": "5Gi"
+      }
+    },
+    "accessModes": [
+      "ReadWriteMany"
+    ]
+  }
+}
+
+{
+  "kind": "PersistentVolume",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "cpe-lab-icp-fnlogstore-pv",
+    "labels": {}
+  },
+  "spec": {
+    "storageClassName": "cpe-lab-icp-fnlogstore",
+    "capacity": {
+      "storage": "5Gi"
+    },
+    "accessModes": [
+      "ReadWriteMany"
+    ],
+    "persistentVolumeReclaimPolicy": "Retain",
+    "nfs": {
+      "path": "/nfs/cpe-lab/FileNet",
+      "server": "master.cp4a.com"
+    }
+  }
+}
+
+{
+  "kind": "PersistentVolumeClaim",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "cpe-lab-icp-fnlogstore-pvc",
+    "namespace": "cpe-lab"
+  },
+  "spec": {
+    "storageClassName": "cpe-lab-icp-fnlogstore",
+    "resources": {
+      "requests": {
+        "storage": "5Gi"
+      }
+    },
+    "accessModes": [
+      "ReadWriteMany"
+    ]
+  }
+}
+
+{
+  "kind": "PersistentVolume",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "cpe-lab-icp-bootstrapstore-pv",
+    "labels": {}
+  },
+  "spec": {
+    "storageClassName": "cpe-lab-icp-bootstrapstore",
+    "capacity": {
+      "storage": "1Gi"
+    },
+    "accessModes": [
+      "ReadWriteMany"
+    ],
+    "persistentVolumeReclaimPolicy": "Retain",
+    "nfs": {
+      "path": "/nfs/cpe-lab/lib_bootstrap",
+      "server": "master.cp4a.com"
+    }
+  }
+}
+
+{
+  "kind": "PersistentVolumeClaim",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "cpe-lab-icp-bootstrapstore-pvc",
+    "namespace": "cpe-lab"
+  },
+  "spec": {
+    "storageClassName": "cpe-lab-icp-bootstrapstore",
+    "resources": {
+      "requests": {
+        "storage": "1Gi"
+      }
+    },
+    "accessModes": [
+      "ReadWriteMany"
+    ]
+  }
+}
+
+{
+  "kind": "PersistentVolume",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "cpe-lab-icp-textextstore-pv",
+    "labels": {}
+  },
+  "spec": {
+    "storageClassName": "cpe-lab-icp-textextstore",
+    "capacity": {
+      "storage": "1Gi"
+    },
+    "accessModes": [
+      "ReadWriteMany"
+    ],
+    "persistentVolumeReclaimPolicy": "Retain",
+    "nfs": {
+      "path": "/nfs/cpe-lab/temp",
+      "server": "master.cp4a.com"
+    }
+  }
+}
+
+{
+  "kind": "PersistentVolumeClaim",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "cpe-lab-icp-textextstore-pvc",
+    "namespace": "cpe-lab"
+  },
+  "spec": {
+    "storageClassName": "cpe-lab-icp-textextstore",
+    "resources": {
+      "requests": {
+        "storage": "1Gi"
+      }
+    },
+    "accessModes": [
+      "ReadWriteMany"
+    ]
+  }
+}
+
+{
+  "kind": "PersistentVolume",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "cpe-lab-icp-icmrulesstore-pv",
+    "labels": {}
+  },
+  "spec": {
+    "storageClassName": "cpe-lab-icp-icmrulesstore",
+    "capacity": {
+      "storage": "1Gi"
+    },
+    "accessModes": [
+      "ReadWriteMany"
+    ],
+    "persistentVolumeReclaimPolicy": "Retain",
+    "nfs": {
+      "path": "/nfs/cpe-lab/icmrules",
+      "server": "master.cp4a.com"
+    }
+  }
+}
+
+{
+  "kind": "PersistentVolumeClaim",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "cpe-lab-icp-icmrulesstore-pvc",
+    "namespace": "cpe-lab"
+  },
+  "spec": {
+    "storageClassName": "cpe-lab-icp-icmrulesstore",
+    "resources": {
+      "requests": {
+        "storage": "1Gi"
+      }
+    },
+    "accessModes": [
+      "ReadWriteMany"
+    ]
+  }
+}
+
+{
+  "kind": "PersistentVolume",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "cpe-lab-icp-filestore-pv",
+    "labels": {}
+  },
+  "spec": {
+    "storageClassName": "cpe-lab-icp-filestore",
+    "capacity": {
+      "storage": "10Gi"
+    },
+    "accessModes": [
+      "ReadWriteMany"
+    ],
+    "persistentVolumeReclaimPolicy": "Retain",
+    "nfs": {
+      "path": "/nfs/cpe-lab/asa",
+      "server": "master.cp4a.com"
+    }
+  }
+}
+
+{
+  "kind": "PersistentVolumeClaim",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "cpe-lab-icp-filestore-pvc",
+    "namespace": "cpe-lab"
+  },
+  "spec": {
+    "storageClassName": "cpe-lab-icp-filestore",
+    "resources": {
+      "requests": {
+        "storage": "10Gi"
+      }
+    },
+    "accessModes": [
+      "ReadWriteMany"
+    ]
+  }
+}
+
