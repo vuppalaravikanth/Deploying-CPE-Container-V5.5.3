@@ -1,0 +1,18 @@
+<server>
+	<ldapRegistry id="MyTDS" realm="defaultRealm"
+		host="10.0.0.1"
+		baseDN="dc=ibm,dc=edu"
+		port="389"
+		ldapType="IBM Tivoli Directory Server"
+		bindDN="cn=admin,dc=ibm,dc=edu"
+		sslEnabled="False"
+		bindPassword="{xor}Lz4sLChvLTs=">
+		<idsFilters
+			userFilter="(&amp;(cn=%v)(objectclass=person))"
+			groupFilter="(&amp;(cn=%v)(|(objectclass=groupOfNames)(objectclass=groupOfUniqueNames)(objectclass=groupOfURLs)))"
+                        userIdMap="*:cn"
+                        groupIdMap="*:cn"
+                        groupMemberIdMap="groupOfNames:member">
+		</idsFilters>
+	</ldapRegistry>
+</server>
