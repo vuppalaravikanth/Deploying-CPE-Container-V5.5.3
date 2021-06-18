@@ -1,37 +1,53 @@
-## Welcome to GitHub Pages
+Welcome to the Deploying-CPE-Container-V5.5.3 Tutorial
 
-You can use the [editor on GitHub](https://github.com/vuppalaravikanth/Deploying-CPE-Container-V5.5.3/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This Project explains how to deploy IBM FileNet P8 Content Platform Engine(CPE) Container V5.5.3 to the Red Hat Open Shift cluster
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<B>Software's</B>
 
-### Markdown
+Db2 Enterprise V11.1.1.1<br/>
+Open LDAP<br/>
+Red Hat OpenShift (RHOCP) 3.11<br/>
+Red Hat Enterprise Linux (RHEL) 7.7 (64-bit)<br/>
+ICP4A19.0.1-ecm.tgz
+<br/><br/>
+Red Hat Open Shift is configured in the following servers
+<table>
+  <tr><td>VM</td><td>RHCOCP Node type</td><td>IP address</td><td>IP address</td></tr>
+  <tr><td>VM1- OCP master</td><td>Master</td><td>10.0.0.1</td><td>master.cp4a.com</td></tr>
+  <tr><td>VM2- OCP compute1</td><td>Compute</td><td>10.0.0.2</td><td>compute1.cp4a.com</td></tr>
+  <tr><td>VM3- OCP compute 2</td><td>Compute</td><td>10.0.0.3</td><td>compute2.cp4a.com</td></tr>  
+</table>
+<br/><br/>
+<B>URLs</B><br/>
+OpenShift web console: https://master.cp4a.com:8443<br/>
+LDAP console: https://master.cp4a.com:6443<br/>
+Administrative console for Content Engine (ACCE): http://master.cp4a.com:<http NodePort>/acce<br/>
+<br/><br/>  
+<B>Step 1: Create New Project</B><br/>
+Login to the open shift console using CLI<br/>
+#oc login https://console.cp4a.com:8443 -u admin -p passw0rd<br/>
+Get the status of the Nodes<br/>
+#oc get nodes<br/>
+Create a new Project cpe-lab<br/>
+#oc new-project cpe-lab<br/>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/vuppalaravikanth/Deploying-CPE-Container-V5.5.3/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+<br/><br/>
+<B>Step 2: Create Persistent Volumes</B><br/>
+Go to the pv folder<br/>
+#cd /root/labfiles/cpelab/pv<br/>
+pv folder contains two files mkyaml.sh and allyamls.sh... Provide the executable permission with the below command<br/>
+#chmod +x *.sh<br/>
+The allyamls.sh script makes a reference to the mkyaml.sh script that in turn creates a new create_pvs.yaml file. Then, you run the newly created create_pvs.yaml file that creates the persistent volumes and persistent volume claims.<br/>
+#./allyamls.sh<br/>
+notify the NFS server to update the exported directories<br/>
+#exportfs -arv<br/>
+You are now ready to apply the created yaml file with the generated definitions of all persistent volumes and persistent volume claims<br/>
+#oc apply -f create_pvs.yaml<br/>
+Query the persistent volume claims to verify that several pv and pvc are created<br/>
+#oc get pvc<br/>
+Login to the Open shift Container Platform --> Cluster Console --> Storage --> Persistent Volumes<br/>
+Verify the 7 PV are created.
+ 
+  
+ 
+  
