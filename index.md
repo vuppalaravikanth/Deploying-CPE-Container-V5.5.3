@@ -25,14 +25,8 @@ LDAP console: https://master.cp4a.com:6443<br/>
 Administrative console for Content Engine (ACCE)
 http://master.cp4a.com:<http NodePort>/acce<br/>
 
-### Step 1 Create New Project
-<br/>
-Login to the open shift console using CLI<br/>
-#oc login https://console.cp4a.com:8443 -u admin -p passw0rd<br/>
-Get the status of the Nodes<br/>
-#oc get nodes<br/>
-Create a new project cpe-lab<br/>
-#oc new-project cpe-lab<br/>
+### *[Step 1 : Create New Project](NewProject.md)*
+
 
 ### Step2 Create Persistent Volumes
 Go to the pv folder<br/>
