@@ -2,7 +2,7 @@ Welcome to the Deploying-CPE-Container-V5.5.3 Tutorial
 
 This Project explains how to deploy IBM FileNet P8 Content Platform Engine(CPE) Container V5.5.3 to the Red Hat Open Shift cluster
 
-<B>Software's</B>
+### <B>Software's</B>
 
 Db2 Enterprise V11.1.1.1<br/>
 Open LDAP<br/>
@@ -18,12 +18,14 @@ Red Hat Open Shift is configured in the following servers
   <tr><td>VM3- OCP compute 2</td><td>Compute</td><td>10.0.0.3</td><td>compute2.cp4a.com</td></tr>  
 </table>
 <br/><br/>
-<B>URLs</B><br/>
+### URLs
+<br/>
 OpenShift web console: https://master.cp4a.com:8443<br/>
 LDAP console: https://master.cp4a.com:6443<br/>
 Administrative console for Content Engine (ACCE): http://master.cp4a.com:<http NodePort>/acce<br/>
 <br/><br/>  
-<B>Step 1: Create New Project</B><br/>
+### Step 1 Create New Project
+<br/>
 Login to the open shift console using CLI<br/>
 #oc login https://console.cp4a.com:8443 -u admin -p passw0rd<br/>
 Get the status of the Nodes<br/>
@@ -32,7 +34,8 @@ Create a new Project cpe-lab<br/>
 #oc new-project cpe-lab<br/>
 
 <br/><br/>
-<B>Step 2: Create Persistent Volumes</B><br/>
+### Step2 Create Persistent Volumes
+<br/>
 Go to the pv folder<br/>
 #cd /root/labfiles/cpelab/pv<br/>
 pv folder contains two files mkyaml.sh and allyamls.sh... Provide the executable permission with the below command<br/>
@@ -47,7 +50,29 @@ Query the persistent volume claims to verify that several pv and pvc are created
 #oc get pvc<br/>
 Login to the Open shift Container Platform --> Cluster Console --> Storage --> Persistent Volumes<br/>
 Verify the 7 PV are created.
- 
-  
- 
-  
+
+### Step3 Prepare the database required by Content Platform Engine
+<br/>
+Go to the db2 folder and list its contents<br/>
+#cd /root/labfiles/cpelab/db2<br/>
+#ls<br/>
+Make the database scripts executable, and copy them to the home directory of the Db2 instance user, who can access the database.<br/>
+#chmod +x *.sh<br/>
+#cp *.sh /home/db2admin<br/>
+Switch to the db2admin directory and list the contents to verify that the scripts were copied successfully.<br/>
+#cd /home/db2admin<br/>
+#ls<br/>
+Run the setfilenetworkload.sh script for the Db2 configuration.     <br/>
+#su - db2admin ./setfilenetworkload.sh<br/>
+Create the GCDDB database by running the create_gcddb.sh script.<br/>
+#su - db2admin ./create_gcddb.sh<br/>
+Create the OS1DB database by running the create_os1db.sh script. <br/>
+#su - db2admin ./create_os1db.sh<br/>
+Verify that the GCDDB and the OS1DB databases are listed by executing the following command<br/>
+#su - db2admin ./db2_list_databases.sh<br/>
+Add the java archives for accessing the Db2 server.Copy the Db2 Client files into the persistent volume directory configDropins_overrides.<br/>
+#cp /opt/ibm/db2/V11.1/java/db2jcc* /nfs/cpe-lab/configDropins_overrides<br/>
+Switch back to the /root/labfiles/cpelab/db2 folder.<br/>  
+#cd /root/labfiles/cpelab/db2<br/>  
+Copy the XML files to the configDropins_overrides directory.
+#cp *.xml /nfs/cpe-lab/configDropins_overrides<br/>
