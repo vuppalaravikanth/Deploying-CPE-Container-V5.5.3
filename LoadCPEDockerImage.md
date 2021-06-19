@@ -52,3 +52,5 @@ Verify the permission and group change displays correctly.
 ![image](https://user-images.githubusercontent.com/1942588/122633765-33f96e80-d0a8-11eb-85ab-58e9a38713dc.png)
 
 You are now ready to deploy the CPE container.
+
+*[Home](index.md)*
