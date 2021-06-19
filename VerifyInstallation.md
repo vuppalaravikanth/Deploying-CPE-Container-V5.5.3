@@ -1,4 +1,4 @@
-### Step 7: Verify successful Content Platform Engine deployment *[Home](index.md)*
+### Step 7: Verify successful Content Platform Engine deployment
 
 Check the status of the pod.
 ```
@@ -21,3 +21,4 @@ The successful installation results in a running CPE container. Make sure that t
 ```
 #oc get pods
 ```
+*[Home](index.md)*
