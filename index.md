@@ -1,4 +1,4 @@
-Welcome to the Deploying-CPE-Container-V5.5.3 Tutorial *[Home](index.md)*
+Welcome to the Deploying-CPE-Container-V5.5.3 Tutorial
 
 This Project explains how to deploy IBM FileNet P8 Content Platform Engine(CPE) Container V5.5.3 to the Red Hat Open Shift cluster
 
