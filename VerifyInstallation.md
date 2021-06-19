@@ -1,4 +1,4 @@
-### Step 7: Verify successful Content Platform Engine deployment
+### Step 7: Verify successful Content Platform Engine deployment *[Home](index.md)*
 
 Check the status of the pod.
 ```
