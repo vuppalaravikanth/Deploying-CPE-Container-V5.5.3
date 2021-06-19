@@ -30,5 +30,14 @@ http://master.cp4a.com:<http NodePort>/acce<br/>
 ### *[Step 2 : Create Persistent Volumes](CreatePersistentVolumes.md)*
   
 ### *[Step 3 : Prepare the database required by Content Platform Engine](CreateDatabase.md)*
+  
+### *[Step 4 : Prepare LDAP required by Content Platform Engine](LDAP.md)*
+  
+### *[Step 5 : Load the Content Platform Engine docker images for Cloud Pak for Automation](LoadCPEDockerImage.md)*
+  
+### *[Step 6 : Deploy the Content Platform Engine container](DeployCPEDockerContainer.md)*
 
+### *[Step 7 : Verify successful Content Platform Engine deployment](VerifyInstallation.md)*
+
+  
 
