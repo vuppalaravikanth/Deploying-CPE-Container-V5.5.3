@@ -4,14 +4,14 @@ This Project explains how to deploy IBM FileNet P8 Content Platform Engine(CPE) 
 
 ### Software's
 
-Db2 Enterprise V11.1.1.1<br/>
-Open LDAP<br/>
-Red Hat OpenShift (RHOCP) 3.11<br/>
-Red Hat Enterprise Linux (RHEL) 7.7 (64-bit)<br/>
-Download the contents of the this folder *[github](https://github.com/vuppalaravikanth/Deploying-CPE-Container-V5.5.3)*<br/> to the location /root/labfiles/cpelab/
-ICP4A19.0.1-ecm.tgz (Download this software and copy to the /root/labfiles/cp4a folder)
+1.  Db2 Enterprise V11.1.1.1<br/>
+2.  Open LDAP<br/>
+3.  Red Hat OpenShift (RHOCP) 3.11<br/>
+4.  Red Hat Enterprise Linux (RHEL) 7.7 (64-bit)<br/>
+5.  Download the contents of the this folder *[github](https://github.com/vuppalaravikanth/Deploying-CPE-Container-V5.5.3)* to the location /root/labfiles/cpelab/ <br/>
+6.  ICP4A19.0.1-ecm.tgz (Download this software and copy to the /root/labfiles/cp4a folder)
 <br/><br/>
-Red Hat Open Shift is configured in the following servers
+Assume Red Hat Open Shift is configured in the following servers
 <table>
   <tr><td>VM</td><td>RHCOCP Node type</td><td>IP address</td><td>IP address</td></tr>
   <tr><td>VM1- OCP master</td><td>Master</td><td>10.0.0.1</td><td>master.cp4a.com</td></tr>
