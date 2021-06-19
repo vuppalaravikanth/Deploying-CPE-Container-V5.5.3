@@ -1,4 +1,4 @@
-Welcome to the Deploying-CPE-Container-V5.5.3 Tutorial
+Welcome to the Deploying-CPE-Container-V5.5.3 Tutorial *[Home](index.md)*
 
 This Project explains how to deploy IBM FileNet P8 Content Platform Engine(CPE) Container V5.5.3 to the Red Hat Open Shift cluster
 
@@ -8,7 +8,8 @@ Db2 Enterprise V11.1.1.1<br/>
 Open LDAP<br/>
 Red Hat OpenShift (RHOCP) 3.11<br/>
 Red Hat Enterprise Linux (RHEL) 7.7 (64-bit)<br/>
-ICP4A19.0.1-ecm.tgz
+Download the contents of the this folder *[github](https://github.com/vuppalaravikanth/Deploying-CPE-Container-V5.5.3)*<br/>
+ICP4A19.0.1-ecm.tgz (Download this software and copy to the /root/labfiles/cp4a folder)
 <br/><br/>
 Red Hat Open Shift is configured in the following servers
 <table>
