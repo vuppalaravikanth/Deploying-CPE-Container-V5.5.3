@@ -63,3 +63,4 @@ cpe-lab --values values.yaml
 ```
 If everything went well, the CPE container is deployed in few minutes
 
+*[Home](index.md)*
