@@ -8,7 +8,7 @@ Db2 Enterprise V11.1.1.1<br/>
 Open LDAP<br/>
 Red Hat OpenShift (RHOCP) 3.11<br/>
 Red Hat Enterprise Linux (RHEL) 7.7 (64-bit)<br/>
-Download the contents of the this folder *[github](https://github.com/vuppalaravikanth/Deploying-CPE-Container-V5.5.3)*<br/>
+Download the contents of the this folder *[github](https://github.com/vuppalaravikanth/Deploying-CPE-Container-V5.5.3)*<br/> to the location /root/labfiles/cpelab/
 ICP4A19.0.1-ecm.tgz (Download this software and copy to the /root/labfiles/cp4a folder)
 <br/><br/>
 Red Hat Open Shift is configured in the following servers
