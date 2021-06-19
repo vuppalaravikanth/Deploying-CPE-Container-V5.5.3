@@ -5,9 +5,9 @@ Login to the open shift console using CLI<br/>
 ```
 Get the status of the Nodes
 ```
-#oc get nodes<br/>
+#oc get nodes
 ```
 Create a new project cpe-lab
 ```
-#oc new-project cpe-lab<br/>
+#oc new-project cpe-lab
 ```
