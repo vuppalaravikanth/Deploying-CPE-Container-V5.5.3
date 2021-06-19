@@ -26,3 +26,5 @@ Query the persistent volume claims to verify that several pv and pvc are created
 ```
 Login to the Open shift Container Platform --> Cluster Console --> Storage --> Persistent Volumes<br/>
 Verify the 7 PV are created.
+
+*[Home](index.md)*
