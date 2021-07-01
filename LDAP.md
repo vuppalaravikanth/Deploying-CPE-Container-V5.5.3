@@ -1,5 +1,5 @@
 
-### Step4 Create Persistent Volumes
+### Step4 Prepare LDAP required by Content Platform Engine
 Login to the Open LDAP console URL: https://console.cp4a.com:6443<br/>
 Create the users mentioned in /root/labfiles/cpelab/ldap/p8users.ldif
 Go to the folder /root/labfiles/cpelab/ldap/ and copy the file ldap_TDS.xml to the configDropins_overrides directory.
